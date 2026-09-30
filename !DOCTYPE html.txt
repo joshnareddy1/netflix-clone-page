@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <!-- Use the Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS from CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom scrollbar styling for horizontal rows */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white antialiased">
+
+    <!-- Header / Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 p-6 bg-gradient-to-b from-zinc-950 to-transparent">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <!-- Logo -->
+            <div class="text-4xl font-extrabold text-red-600 tracking-tight">
+                Netflix
+            </div>
+            <!-- Navigation Links -->
+            <ul class="flex space-x-8 text-lg">
+                <li><a href="#" class="hover:text-red-500 transition-colors duration-200">Home</a></li>
+                <li><a href="#" class="hover:text-red-500 transition-colors duration-200">TV Shows</a></li>
+                <li><a href="#" class="hover:text-red-500 transition-colors duration-200">Movies</a></li>
+                <li><a href="#" class="hover:text-red-500 transition-colors duration-200">New & Popular</a></li>
+                <li><a href="#" class="hover:text-red-500 transition-colors duration-200">My List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with featured content -->
+    <main>
+        <div class="relative h-[90vh] overflow-hidden">
+            <!-- Background Image for the hero section -->
+            <img src="https://placehold.co/1920x1080/4a00e0/FFFFFF?text=The+Lost+City+Hero" alt="Featured content background" class="w-full h-full object-cover">
+            
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
+
+            <!-- Hero Content -->
+            <div class="absolute bottom-1/4 left-16 max-w-2xl">
+                <h1 class="text-6xl font-bold mb-4 drop-shadow-lg">The Lost City</h1>
+                <p class="text-lg text-zinc-300 mb-8 drop-shadow-md">
+                    A reclusive romance novelist on a book tour with her cover model gets swept up in a kidnapping attempt that lands them both in a cutthroat jungle adventure.
+                </p>
+                <div class="flex space-x-4">
+                    <!-- Play Button -->
+                    <button class="bg-white text-zinc-950 px-8 py-3 rounded-full font-bold text-lg flex items-center space-x-2 hover:bg-zinc-200 transition-colors duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3.25-2A1 1 0 0013 10a1 1 0 00-.195-.468l-3.25-2z"></path></svg>
+                        <span>Play</span>
+                    </button>
+                    <!-- Info Button -->
+                    <button class="bg-zinc-600/70 text-white px-8 py-3 rounded-full font-bold text-lg flex items-center space-x-2 hover:bg-zinc-500 transition-colors duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2h2a1 1 0 100-2H9z" clip-rule="evenodd"></path></svg>
+                        <span>More Info</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Rows -->
+        <section class="p-8">
+            <!-- Trending Now Section -->
+            <h2 class="text-3xl font-bold mb-6">Top 10 in the US Today</h2>
+            <div class="flex space-x-4 overflow-x-scroll scrollbar-hide snap-x">
+                <!-- Movie/Show Posters -->
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden relative">
+                    <img src="https://placehold.co/200x300/4a00e0/FFFFFF?text=Top+1" alt="Movie Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-5xl font-extrabold opacity-0 hover:opacity-100 transition-opacity duration-300">1</div>
+                </div>
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden relative">
+                    <img src="https://placehold.co/200x300/e74c3c/FFFFFF?text=Top+2" alt="Movie Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-5xl font-extrabold opacity-0 hover:opacity-100 transition-opacity duration-300">2</div>
+                </div>
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden relative">
+                    <img src="https://placehold.co/200x300/3498db/FFFFFF?text=Top+3" alt="Movie Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-5xl font-extrabold opacity-0 hover:opacity-100 transition-opacity duration-300">3</div>
+                </div>
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden relative">
+                    <img src="https://placehold.co/200x300/2ecc71/FFFFFF?text=Top+4" alt="Movie Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-5xl font-extrabold opacity-0 hover:opacity-100 transition-opacity duration-300">4</div>
+                </div>
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden relative">
+                    <img src="https://placehold.co/200x300/f39c12/FFFFFF?text=Top+5" alt="Movie Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-5xl font-extrabold opacity-0 hover:opacity-100 transition-opacity duration-300">5</div>
+                </div>
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden relative">
+                    <img src="https://placehold.co/200x300/9b59b6/FFFFFF?text=Top+6" alt="Movie Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-5xl font-extrabold opacity-0 hover:opacity-100 transition-opacity duration-300">6</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Releases Section -->
+        <section class="p-8">
+            <h2 class="text-3xl font-bold mb-6">New Releases</h2>
+            <div class="flex space-x-4 overflow-x-scroll scrollbar-hide snap-x">
+                <!-- Movie/Show Posters (same structure as above) -->
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden">
+                    <img src="https://placehold.co/200x300/1e293b/FFFFFF?text=New+1" alt="New Release Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                </div>
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden">
+                    <img src="https://placehold.co/200x300/94a3b8/FFFFFF?text=New+2" alt="New Release Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                </div>
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden">
+                    <img src="https://placehold.co/200x300/f87171/FFFFFF?text=New+3" alt="New Release Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                </div>
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden">
+                    <img src="https://placehold.co/200x300/38a169/FFFFFF?text=New+4" alt="New Release Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                </div>
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden">
+                    <img src="https://placehold.co/200x300/fbbf24/FFFFFF?text=New+5" alt="New Release Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- My List Section -->
+        <section class="p-8">
+            <h2 class="text-3xl font-bold mb-6">My List</h2>
+            <div class="flex space-x-4 overflow-x-scroll scrollbar-hide snap-x">
+                <!-- Movie/Show Posters (same structure as above) -->
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden">
+                    <img src="https://placehold.co/200x300/e74c3c/FFFFFF?text=My+List+1" alt="My List Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                </div>
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden">
+                    <img src="https://placehold.co/200x300/3498db/FFFFFF?text=My+List+2" alt="My List Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                </div>
+                <div class="min-w-[200px] snap-center transform transition-transform duration-300 hover:scale-105 cursor-pointer rounded-lg overflow-hidden">
+                    <img src="https://placehold.co/200x300/2ecc71/FFFFFF?text=My+List+3" alt="My List Poster" class="w-full h-auto object-cover rounded-lg shadow-xl">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-8 text-center text-zinc-500">
+        <p>&copy; 2024 StreamVault. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
